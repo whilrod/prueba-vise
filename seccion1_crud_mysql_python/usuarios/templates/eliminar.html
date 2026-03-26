@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eliminar Usuario</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .confirmacion { background-color: #f44336; color: white; padding: 15px; margin: 20px 0; }
+        button { background-color: #f44336; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+        .cancelar { background-color: #4CAF50; text-decoration: none; padding: 10px 20px; color: white; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h1>Eliminar Usuario</h1>
+    <div class="confirmacion">
+        <p>¿Estás seguro que deseas eliminar a <strong>{{ usuario.nombre }}</strong>?</p>
+        <p>Esta acción no se puede deshacer.</p>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Sí, Eliminar</button>
+        <a href="/" class="cancelar">Cancelar</a>
+    </form>
+</body>
+</html>
